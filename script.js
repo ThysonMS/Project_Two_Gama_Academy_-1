@@ -1169,7 +1169,7 @@ function exercise06() {
   }
   console.log("O item mais caro da loja é: " +
     produtoCaro.descricao);
-  console.log("R$ " + produtoCaro.preco +
+  console.log("Preço R$ " + produtoCaro.preco +
     " - departamento de " +
     produtoCaro.departamento.nomeDepto);
 }
@@ -1186,7 +1186,7 @@ function exercise07() {
   }
   console.log("O item mais barato da loja é: " +
     produtoBarato.descricao);
-  console.log("R$ " + produtoBarato.preco +
+  console.log("Preço R$ " + produtoBarato.preco +
     " - departamento de " +
     produtoBarato.departamento.nomeDepto);
 }
