@@ -1119,7 +1119,7 @@ function exercise02() {
   for (i = 0; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
     
-    //Validar se está em destaque
+    //Validar se produto está em destaque
     
     if (produto.emDestaque == "sim") {
       total = total + produto.qtdEstoque;
@@ -1138,7 +1138,7 @@ function exercise03() {
   for (i = 0; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
     
-    //Validar se está disponível
+    //Validar se produto está disponível
     
     if (produto.disponivel == "sim") {
       total = total + produto.qtdEstoque;
@@ -1157,7 +1157,7 @@ function exercise04() {
   for (i = 0; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
     
-    //Verifica se está disponível e em destaque
+    //Verifica se produto está disponível e em destaque
     
     if (produto.disponivel == "sim" && produto.emDestaque == "sim") {
       total.push(produto);
@@ -1176,7 +1176,7 @@ function exercise05() {
   for (i = 0; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
 
-    //Valida se tem em estoque, recebe o valor do inventario do produto atual e atualiza o inventario total
+    //Valida se tem o produto em estoque, recebe o valor do inventario do produto atual e atualiza o inventario total
     
     if (produto.disponivel == "sim") {
       total = total + (produto.preco * produto.qtdEstoque);
@@ -1243,7 +1243,7 @@ function exercise08() {
   for (i = 1; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
 
-    //Comparação entre preço o vezes a quantidade em estoque de ambos produtos (referencia e demais), até chegar no maior produto
+    //Comparação entre o preço do produto vezes a quantidade em estoque de ambos produtos (referencia e demais), até chegar no maior produto
     
     if ((produtoMostValue.preco * produtoMostValue.qtdEstoque) < (produto.preco * produto.qtdEstoque) &&
       produto.disponivel == "sim") {
@@ -1265,7 +1265,7 @@ function exercise09() {
   for (i = 1; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
 
-    //Comparação entre o preço vezes a quantidade em estoque de ambos produtos (referencia e demais), até chegar no menor produto
+    //Comparação entre o preço do produto vezes a quantidade em estoque de ambos produtos (referencia e demais), até chegar no menor produto
     
     if ((produtoLowValue.preco * produtoLowValue.qtdEstoque) > (produto.preco * produto.qtdEstoque) &&
       produto.disponivel == "sim") {
