@@ -1095,6 +1095,8 @@ var listaProdutos = [
 
 console.log("Choose exercises 01-10");
 
+//Quantidade total de itens em estoque (somatória das quantidades de todos os produtos)
+
 function exercise01() {
   let total = 0;
 
@@ -1104,6 +1106,8 @@ function exercise01() {
   }
   console.log("O total de produtos em ESTOQUE é: " + total);
 }
+
+//Quantidade total de itens em destaque (somatória das quantidades dos itens marcados como "emDestaque : sim")
 
 function exercise02() {
   let total = 0;
@@ -1118,6 +1122,8 @@ function exercise02() {
   console.log("O total de produtos em DESTAQUE é: " + total);
 }
 
+//Quantidade total de itens disponíveis (similar ao anterior)
+
 function exercise03() {
   let total = 0;
 
@@ -1130,6 +1136,8 @@ function exercise03() {
   }
   console.log("O total de produtos DISPONÍVEIS é: " + total);
 }
+
+//Quantidade de itens disponíveis e em destaque
 
 function exercise04() {
   let total = [];
@@ -1144,6 +1152,8 @@ function exercise04() {
   console.log("O total de produtos DISPONÍVEIS e em DESTAQUE é: " + total.length);
 }
 
+//Valor total do inventário da empresa (somatória dos valores individuais multiplicado pela quantidade em estoque - considere apenas os produtos “EM ESTOQUE”)
+
 function exercise05() {
   let total = 0;
 
@@ -1156,6 +1166,8 @@ function exercise05() {
   }
   console.log("O valor do inventário é: R$ " + total);
 }
+
+//Produto mais caro da loja (bem como seu departamento - considere apenas o preço dele)
 
 function exercise06() {
   let produtoCaro = listaProdutos[0];
@@ -1174,6 +1186,8 @@ function exercise06() {
     produtoCaro.departamento.nomeDepto);
 }
 
+//Produto mais barato da loja (bem como seu departamento - considere apenas o preço dele)
+
 function exercise07() {
   let produtoBarato = listaProdutos[0];
 
@@ -1190,6 +1204,8 @@ function exercise07() {
     " - departamento de " +
     produtoBarato.departamento.nomeDepto);
 }
+
+//Produto de estoque mais valioso (considere o preço multiplicado pela quantidade e também apenas EM ESTOQUE)
 
 function exercise08() {
   let produtoMostValue = listaProdutos[0];
@@ -1208,6 +1224,8 @@ function exercise08() {
     produtoMostValue.preco * produtoMostValue.qtdEstoque);
 }
 
+//Produto em estoque menos valioso (considere o preço multiplicado pela quantidade e também apenas EM ESTOQUE)
+
 function exercise09() {
   let produtoLowValue = listaProdutos[0];
 
@@ -1224,6 +1242,8 @@ function exercise09() {
   console.log("Valor total: R$ " +
     produtoLowValue.preco * produtoLowValue.qtdEstoque);
 }
+
+//Valor do ticket médio dos produtos da empresa (basicamente o valor total do inventário dividido pelo número de itens - considere TODOS os produtos, porém considere apenas 1 exemplar por produto)
 
 function exercise10() {
   let ticketMedio = 0;
