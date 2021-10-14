@@ -1099,9 +1099,9 @@ console.log("Choose exercises 01-10");
 
 function exercise01() {
   let total = 0;
-  
+
   //Percorer lista de produtos atraves do FOR
-  
+
   for (i = 0; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
     total = total + produto.qtdEstoque;
@@ -1113,14 +1113,14 @@ function exercise01() {
 
 function exercise02() {
   let total = 0;
-  
+
   //Percorer lista de produtos atraves do FOR
-  
+
   for (i = 0; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
-    
+
     //Validar se produto está em destaque
-    
+
     if (produto.emDestaque == "sim") {
       total = total + produto.qtdEstoque;
     }
@@ -1137,9 +1137,9 @@ function exercise03() {
 
   for (i = 0; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
-    
+
     //Validar se produto está disponível
-    
+
     if (produto.disponivel == "sim") {
       total = total + produto.qtdEstoque;
     }
@@ -1153,12 +1153,12 @@ function exercise04() {
   let total = [];
 
   //Percorer lista de produtos atraves do FOR
-  
+
   for (i = 0; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
-    
+
     //Verifica se produto está disponível e em destaque
-    
+
     if (produto.disponivel == "sim" && produto.emDestaque == "sim") {
       total.push(produto);
     }
@@ -1172,12 +1172,12 @@ function exercise05() {
   let total = 0;
 
   //Percorer lista de produtos atraves do FOR
-  
+
   for (i = 0; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
 
     //Valida se tem o produto em estoque, recebe o valor do inventario do produto atual e atualiza o inventario total
-    
+
     if (produto.disponivel == "sim") {
       total = total + (produto.preco * produto.qtdEstoque);
     }
@@ -1191,19 +1191,19 @@ function exercise06() {
   let produtoCaro = listaProdutos[0];
 
   //Percorer lista de produtos atraves do FOR
-  
+
   for (i = 1; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
 
     //Condição de comparação entre produto referência e os demais (referencia é o primeiro)
-    
+
     if (produtoCaro.preco < produto.preco) {
       produtoCaro = produto;
     }
   }
   console.log("O item mais caro da loja é: " +
     produtoCaro.descricao);
-  
+
   console.log("Preço R$ " + produtoCaro.preco +
     " - departamento de " +
     produtoCaro.departamento.nomeDepto);
@@ -1215,19 +1215,19 @@ function exercise07() {
   let produtoBarato = listaProdutos[0];
 
   //Percorer lista de produtos atraves do FOR
-  
+
   for (i = 1; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
 
     //Condição de comparação entre produto referência e os demais (referencia é o primeiro)
-    
+
     if (produtoBarato.preco > produto.preco) {
       produtoBarato = produto;
     }
   }
   console.log("O item mais barato da loja é: " +
     produtoBarato.descricao);
-  
+
   console.log("Preço R$ " + produtoBarato.preco +
     " - departamento de " +
     produtoBarato.departamento.nomeDepto);
@@ -1239,12 +1239,12 @@ function exercise08() {
   let produtoMostValue = listaProdutos[0];
 
   //Percorer lista de produtos atraves do FOR
-  
+
   for (i = 1; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
 
     //Comparação entre o preço do produto vezes a quantidade em estoque de ambos produtos (referencia e demais), até chegar no maior produto
-    
+
     if ((produtoMostValue.preco * produtoMostValue.qtdEstoque) < (produto.preco * produto.qtdEstoque) &&
       produto.disponivel == "sim") {
       produtoMostValue = produto;
@@ -1252,7 +1252,7 @@ function exercise08() {
   }
   console.log("O item mais valioso da loja é: " +
     produtoMostValue.descricao);
-  
+
   console.log("Valor total: R$ " +
     produtoMostValue.preco * produtoMostValue.qtdEstoque);
 }
@@ -1266,7 +1266,7 @@ function exercise09() {
     let produto = listaProdutos[i];
 
     //Comparação entre o preço do produto vezes a quantidade em estoque de ambos produtos (referencia e demais), até chegar no menor produto
-    
+
     if ((produtoLowValue.preco * produtoLowValue.qtdEstoque) > (produto.preco * produto.qtdEstoque) &&
       produto.disponivel == "sim") {
       produtoLowValue = produto;
@@ -1274,7 +1274,7 @@ function exercise09() {
   }
   console.log("O item menos valioso da loja é: " +
     produtoLowValue.descricao);
-  
+
   console.log("Valor total: R$ " +
     produtoLowValue.preco * produtoLowValue.qtdEstoque);
 }
@@ -1285,12 +1285,12 @@ function exercise10() {
   let ticketMedio = 0;
 
   //Percorer lista de produtos atraves do FOR
-  
+
   for (i = 0; i < listaProdutos.length; i++) {
     let produto = listaProdutos[i];
 
     //Valida se tem em estoque, recebe o valor do inventario do produto atual e atualiza o ticket
-    
+
     if (produto.disponivel == "sim") {
       ticketMedio = ticketMedio +
         (produto.preco * produto.qtdEstoque);
@@ -1298,4 +1298,30 @@ function exercise10() {
   }
   console.log("O valor do ticket médio é: R$ " +
     (ticketMedio / listaProdutos.length));
+}
+
+function exercise11() {
+  let contador = 0;
+  let listaDepartamentos = [];
+
+  //Percorer lista de produtos atraves do FOR
+
+  for (i = 0; i < listaProdutos.length; i++) {
+    let produto = listaProdutos[i];
+
+    if (produto.disponivel == "sim" &&
+      produto.departamento.idDepto != contador) {
+
+      let listaItens = {
+        nomeDepartamento: produto.departamento.nomeDepto,
+        codigoDepartamento: produto.departamento.idDepto,
+        quantidadeEstoque: 0
+      }
+
+      listaDepartamentos.push(listaItens);
+      contador = produto.departamento.idDepto;
+
+      console.log("Departamento: " + produto.departamento.nomeDepto);
+    }
+  }
 }
