@@ -1125,7 +1125,8 @@ function exercise02() {
       total = total + produto.qtdEstoque;
     }
   }
-  console.log("O total de produtos em DESTAQUE é: " + total);
+  console.log("O total de produtos em DESTAQUE é: " +
+    total);
 }
 
 //Quantidade total de itens disponíveis (similar ao anterior)
